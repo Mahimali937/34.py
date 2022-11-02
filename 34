@@ -1,0 +1,31 @@
+#Name:Mahim Ali
+#Email:mahim.ali32@myhunter.cuny.edu
+#Date:November 2,2022
+#This program cuts an image
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+print("Enter 1 to get upper right corner")
+print("Enter 2 to get middle portion")
+choice = input("Your choice: ")
+if choice == "1":
+    inputfile = input("Enter input file name: ")
+    img = plt.imread(inputfile)
+    height = img.shape[0]
+    width = img.shape[1]
+    outputfile = input("Enter output file name: ")
+    img2 = img[:int(height/2), int(width/2):]
+    plt.imsave(outputfile, img2)
+elif choice == "2":
+    inputfile = input("Enter input file name: ")
+    img = plt.imread(inputfile)
+    height = img.shape[0]
+    width = img.shape[1]
+    outputfile = input("Enter output file name: ")
+    img2 = img[int(height/4):int(height*0.75), int(width/4):int(width*0.75)]
+    plt.imsave(outputfile, img2)
+else:
+    print("wrong choice")
+               
